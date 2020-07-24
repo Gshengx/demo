@@ -1,5 +1,5 @@
 # demo
-
+一个vue的幸运抽奖大转盘demo
 ## Project setup
 ```
 yarn install
@@ -19,6 +19,3 @@ yarn build
 ```
 yarn lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
