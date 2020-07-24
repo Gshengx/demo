@@ -182,17 +182,19 @@ export default {
         this.ctx.restore();
         //绘制奖品图片
         if (this.turnInfo[i].img) {
-          this.ctx.save();
-          this.ctx.translate(
-            this.width + Math.cos(angle + arc / 2) * this.width,
-            this.width + Math.sin(angle + arc / 2) * this.width
-          );
-          this.ctx.rotate(angle + arc / 2);
-
           let img = new Image();
           img.src = this.turnInfo[i].img;
-          this.ctx.drawImage(img, -this.width / 2 + 10, -50, 42, 94);
-          this.ctx.restore();
+          img.onload = () => {
+            this.ctx.save();
+            this.ctx.translate(
+              this.width + Math.cos(angle + arc / 2) * this.width,
+              this.width + Math.sin(angle + arc / 2) * this.width
+            );
+            this.ctx.rotate(angle + arc / 2);
+
+            this.ctx.drawImage(img, -this.width / 2 + 10, -50, 42, 94);
+            this.ctx.restore();
+          };
         }
       }
     },
