@@ -1,6 +1,5 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-// import Home from "../views/Home.vue";
 
 Vue.use(VueRouter);
 
@@ -9,16 +8,20 @@ const routes = [
     path: "/",
     name: "Home",
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue"),
+      import(/* webpackChunkName: "Home" */ "../views/Home.vue"),
   },
   {
-    path: "/about",
-    name: "About",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
+    path: "/tree",
+    name: "Tree",
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue"),
+      import(/* webpackChunkName: "TreeDemo" */ "../views/TreeDemo.vue"),
+  },
+  // 幸运大转盘
+  {
+    path: "/trunbox",
+    name: "TrunBox",
+    component: () =>
+      import(/* webpackChunkName: "TrunBoxDemo" */ "../views/TrunBoxDemo.vue"),
   },
 ];
 
